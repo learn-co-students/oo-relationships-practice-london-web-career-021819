@@ -83,7 +83,6 @@ end
 
 # #               GYM
 
-
 # # - Clients
 # client01 = Client.new('Sean')
 # client02 = Client.new('Sinnead')
@@ -133,7 +132,6 @@ end
 # JointClass.new(trainer05, location04)
 # JointClass.new(trainer05, location06)
 
-
 # # - Assign Trainers to Clients
 
 # client01.assign_trainer(trainer04)
@@ -143,8 +141,48 @@ end
 # client05.assign_trainer(trainer03)
 # client06.assign_trainer(trainer05)
 
-
 # #               END OF GYM
+
+# -             CROWDFUNDING
+
+# - Users
+user001 = User.new('Baal')
+user002 = User.new('Caal')
+user003 = User.new('Daal')
+user004 = User.new('Gaal')
+user005 = User.new('Faal')
+user006 = User.new('Laal')
+user007 = User.new('Zaal')
+user008 = User.new('Xaal')
+user009 = User.new('Maal')
+user010 = User.new('Naal')
+user011 = User.new('Taal')
+
+# - Projects
+# pr1= user001.create_project('Time-stopper', 2_000_000_001)
+# user002.create_project('Magnetron', 50_000)
+# user003.create_project('Game', 400_000)
+
+pro01 = Project.new('Time-stopper', user001, 2_000_000_001)
+pro02 = Project.new('Magnetron', user002, 50_000)
+pro03 = Project.new('Game', user003,400_000)
+
+
+# - Pledges
+
+# pl1 = user004.pledge_project('Time-stopper', 300_000)
+# user005.pledge_project('Time-stopper', 323_300_000)
+# user006.pledge_project('Magnetron', 410_000)
+
+pledge01 = Pledge.new(user004, pro01, 300_000)
+pledge02 = Pledge.new(user005, pro01, 323_300_000)
+pledge03 = Pledge.new(user006, pro02, 410_000)
+pledge04 = Pledge.new(user006, pro01, 5_410_000)
+pledge05 = Pledge.new(user006, pro01, 3_410_000)
+pledge06 = Pledge.new(user007, pro01, 40_000)
+pledge07 = Pledge.new(user007, pro02, 4_000)
+
+# -             END OF CROWDFUNDING
 
 Pry.start
 
