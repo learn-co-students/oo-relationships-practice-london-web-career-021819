@@ -31,6 +31,6 @@ class Listing
   end
 
   def self.most_popular
-    Trip.all.max_by { |e| Trip.all.count(e) }
+    Trip.all.max_by { |e| Trip.all.count(e) }.listing
   end
 end
