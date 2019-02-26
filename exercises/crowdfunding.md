@@ -1,5 +1,3 @@
-# Level: Hard
-
 ## Deliverables
 You are building the next big crowdfunding site. Users can make projects and fund projects. Oh the projects!
 - your models are users, projects and pledges
