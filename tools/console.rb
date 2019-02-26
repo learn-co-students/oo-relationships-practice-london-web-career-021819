@@ -184,6 +184,29 @@ end
 
 # # -             END OF CROWDFUNDING
 
+# BAKERY
+# - Bakeries
+
+bak1 = Bakery.new('Bak1')
+bak2 = Bakery.new('Bak2')
+
+# - Desserts
+des1 = Desserts.new('Dess1', bak1)
+des2 = Desserts.new('Dess2', bak2)
+des3 = Desserts.new('Dess3', bak1)
+
+# - Ingredients
+
+ingr1 = Ingredients.new('Ingr1', 200, des1)
+ingr2 = Ingredients.new('Ingr2', 300, des2)
+ingr3 = Ingredients.new('Ingr3', 740, des1)
+ingr4 = Ingredients.new('Ingr4', 50, des3)
+
+
+
+
+# END OF BAKERY
+
 Pry.start
 
 'oi'
