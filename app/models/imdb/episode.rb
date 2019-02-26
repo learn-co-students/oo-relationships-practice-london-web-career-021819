@@ -14,8 +14,4 @@ class Episode
   def self.all
     @@episodes
   end
-
-  def characters
-    appearances.collect(&:character)
-  end
 end
