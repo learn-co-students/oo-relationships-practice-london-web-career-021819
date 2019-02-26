@@ -4,18 +4,17 @@ def reload
   load 'config/environment.rb'
 end
 
-l1 = Listing.new("house1", "london")
-l2 = Listing.new("house2", "manchester")
-l3 = Listing.new("apartment1", "liverpool")
+b1 = Bakery.new("bakery1")
+b2 = Bakery.new("bakery2")
+b3 = Bakery.new("bakery3")
 
-g1 = Guest.new("stu")
-g2 = Guest.new("dan")
-g3 = Guest.new("sofia")
+d1 = Dessert.new("chocolate", "cocao", b1)
+d2 = Dessert.new("vanilla", "flowers", b2)
+d3 = Dessert.new("strawberry", "fruit", b3)
 
-t1 = Trip.new(l1, g1, "04/09/2018")
-t2 = Trip.new(l1, g2, "05/09/2018")
-t3 = Trip.new(l2, g2, "05/03/2017")
-t4 = Trip.new(l3, g3, "21/11/2016")
-
+i1 = Ingredient.new("cocao", 20, b1, d1)
+i2 = Ingredient.new("flowers", 30, b2, d2)
+i3 = Ingredient.new("fruit", 40, b3, d3)
+i4 = Ingredient.new("fruit", 40, b1, d3)
 
 Pry.start
