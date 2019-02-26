@@ -1,26 +1,29 @@
 class Location
+  include Saveable
+
   attr_reader :name
 
   @@locations = []
-
-  def initialize(name)
-    @name = name
-    self.class.all << self
-  end
 
   def self.all
     @@locations
   end
 
+  def self.least_clients
+    all.min_by {|location| location.clients.count}
+  end
+
   def trainers
-    Trainer.all.select {|trainer| trainer.locations.include?(self)}
+    contracts.collect {|contract| contract.trainer}
   end
 
   def clients
     trainers.collect {|trainer| trainer.clients}.flatten
   end
 
-  def self.least_clients
-    all.min_by {|loc| loc.clients.count}
+  private
+
+  def contracts
+    Contract.all.select {|contract| contract.location == self}
   end
 end

@@ -1,19 +1,33 @@
 class Actor
-  attr_reader :name, :characters
+  include Screen::PersonInit
 
   @@actors = []
-
-  def initialize(name, *characters)
-    @name = name
-    @characters = characters
-    @@actors << self
-  end
 
   def self.all
     @@actors
   end
 
+  def characters
+    Character.all.select {|character| character.actor == self}
+  end
+
   def self.most_characters
-    self.all.max {|a, b| a.characters.count <=> b.characters.count}
+    all.max_by {|actor| actor.characters.count}
+  end
+
+  def movies
+    characters.collect(&:movies).flatten
+  end
+
+  def episodes
+    characters.collect(&:episodes).flatten
+  end
+
+  def shows
+    characters.collect(&:shows).flatten.uniq
+  end
+
+  def filmography
+    characters.collect(&:appearances).flatten
   end
 end

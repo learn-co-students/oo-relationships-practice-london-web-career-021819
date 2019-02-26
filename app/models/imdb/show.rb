@@ -1,5 +1,7 @@
 class Show
-  include Screen
+  include Screen::TopLevelInit
+
+  attr_reader :title
 
   @@shows = []
 
@@ -7,8 +9,11 @@ class Show
     @@shows
   end
 
-  def self.on_the_big_screen
-    movie_titles = Movie.all.collect {|mov| mov.title}
-    self.all.select {|show| movie_titles.include?(show.title)}
+  def episodes
+    Episode.all.select {|ep| ep.show == self}
+  end
+
+  def characters
+    episodes.collect(&:characters).flatten.uniq
   end
 end
