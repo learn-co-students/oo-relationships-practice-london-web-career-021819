@@ -35,6 +35,11 @@ class Project
     end
   end
 
+  def self.most_baker
+    all_pledges = Pledge.all.map(&:project)
+    all_pledges.each_with_object(Hash.new(0)) { |e, tot| tot[e] += 1; }.max_by { |k, v| v }[0]
+  end
+
   def self.no_pledges
     all - funded
   end

@@ -20,3 +20,4 @@ class Character
     characters.max_by { |char| characters.count(char) }
   end
 end
+
