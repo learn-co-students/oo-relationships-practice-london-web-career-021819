@@ -4,17 +4,19 @@ def reload
   load 'config/environment.rb'
 end
 
-b1 = Bakery.new("bakery1")
-b2 = Bakery.new("bakery2")
-b3 = Bakery.new("bakery3")
+u1 = User.new("stu")
+u2 = User.new("dan")
+u3 = User.new("sofia")
 
-d1 = Dessert.new("chocolate", "cocao", b1)
-d2 = Dessert.new("vanilla", "flowers", b2)
-d3 = Dessert.new("strawberry", "fruit", b3)
+p1 = Project.new("project1", 1000, "creator1")
+p2 = Project.new("project2", 2000, "creator2")
+p3 = Project.new("project3", 3000, "creator3")
+p4 = Project.new("project4", 4000, "creator4")
 
-i1 = Ingredient.new("cocao", 20, b1, d1)
-i2 = Ingredient.new("flowers", 30, b2, d2)
-i3 = Ingredient.new("fruit", 40, b3, d3)
-i4 = Ingredient.new("fruit", 40, b1, d3)
+pledge1 = Pledge.new(10000, u1, p1)
+pledge2 = Pledge.new(20000, u2, p2)
+pledge3 = Pledge.new(30000, u3, p3)
+pledge4 = Pledge.new(40000, u1, p4)
+pledge5 = Pledge.new(50000, u1, p1)
 
 Pry.start
