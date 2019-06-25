@@ -12,13 +12,13 @@ You are building an app for a gym. But this is not just any gym. It has many loc
 Write out the relationships using has_many, belongs_to and has_many_through. Write out a schema that shows what these tables might look like in a database. Where would the foreign keys live? Then *build out methods reflecting all these relationships.* What method can I call on a location to find all its clients, etc?
 
 #### Client
-- #assign_trainer
+- #assign_trainer - [x]
   - should take a trainer as argument and assign it to the client
 
 #### Location
-- .least_clients
+- .least_clients - [x]
   - should find which location has the least clients training there. we need to increase the marketing spend for that location!
 
-#### Trainer
+#### Trainer - [x]
 - .most_clients
   - should find which trainer has the most clients. give that trainer a bonus!

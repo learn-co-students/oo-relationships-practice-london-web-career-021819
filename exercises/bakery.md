@@ -11,35 +11,35 @@ You are building an app for a national bakery chain
 Write out the relationships using has_many, belongs_to and has_many_through. Create the necessary methods to connect these classes.
 
 #### Bakery
-- #ingredients
+- #ingredients - [x]
   - should return an array of ingredients for the bakery's desserts
-- #desserts
+- #desserts - [x]
   - should return an array of desserts the bakery makes
-- #average_calories
+- #average_calories - [x]
   - should return a number totaling the average number of calories for the desserts sold at this bakery
-- .all
+- .all - [x]
   - should return an array of all bakeries
-- #shopping_list
+- #shopping_list - [x]
   - should return a string of names for ingredients for the bakery
 
 #### Desserts
-  - #ingredients
+  - #ingredients - [x]
     - should return an array of ingredients for the dessert
-  - #bakery
+  - #bakery - [x]
     - should return the bakery object for the dessert
-  - #calories
+  - #calories - [x]
     - should return a number totaling all the calories for all the ingredients included in that dessert
-  - .all
+  - .all - [x]
     - should return an array of all desserts
 
 #### Ingredients
-  - #dessert
+  - #dessert - [x]
     - should return a dessert object for that ingredient
-  - #bakery
+  - #bakery - [x]
     - should return the bakery object for the bakery that uses that ingredient
-  - .all
+  - .all - [x]
     - should return an array of all ingredients
-  - .find_all_by_name(ingredient)
+  - .find_all_by_name(ingredient) - [x]
     - should take a string argument return an array of all ingredients that include that string in their name
       - .find_all_by_name('chocolate') might return ['chocolate sprinkles', 'chocolate mousse', 'chocolate']
       - make sure you aren't just looking for exact matches (like 'chocolate' == 'chocolate')
